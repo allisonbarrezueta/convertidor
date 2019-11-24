@@ -1,13 +1,13 @@
+bin/convertidor: obj/convertidor.o
+	gcc obj/convertidor.o -o bin/convertidor
 
-all: convertidor
+obj/convertidor.o: src/main.c
+	gcc -Wall -c src/main.c -o obj/convertidor.o
 
-convertidor: main.o
-	gcc -o convertidor main.o
 
-main.o: ./include/main.h ./src/main.c
-	gcc -c -I. ./src/main.c
-
-.PHONY: clean
-
+.PHONY: clean, run
 clean:
-	rm convertidor *.o
+	rm bin/* obj/*
+
+run: bin/convertidor
+	bin/convertidor
