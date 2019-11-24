@@ -20,7 +20,7 @@ int main() {
     scanf("%d", &base);
 
     if (decimal < 0 || base < 2 || base > 16){
-      printf("No se conviertes numero negativo");
+      printf("Error al ingresar numero o base\n");
       return -1;
     }
 
@@ -30,17 +30,17 @@ int main() {
 }
 
 void convertidor(int numero, int base) {
-  char arrnumconvertido[32]; //Arreglo de 32 espacios
-  char arrHexadecimal[16] = "0123456789ABCDEF"; //Se usará dependiendo de la base escogida
+  char arrnumconvertido[32]; //Arreglo de 32 bits
+  char arrHexadecimal[16] = "0123456789ABCDEF"; //Se usará cada caracter dependiendo de la base escogida
   int contador = 0; //contador para ingresar numeros en arrnumconvertido
 
   while (numero > 0) {
     int residuo = numero % base; //Módulo de la base
-    arrnumconvertido[contador++] = arrHexadecimal[residuo];
+    arrnumconvertido[contador++] = arrHexadecimal[residuo]; //agregamos el número o digito que este en el espacio del residuo
     numero = numero / base;
   }
 
-  printf("\n El número en base %d es:  ", base);
+  printf("\nEl número en base %d es:  ", base);
   //Recorro arrnumconvertido de manera descendiente
   for (int j = contador - 1; j >= 0; j--) {
     printf("%c", arrnumconvertido[j]);
