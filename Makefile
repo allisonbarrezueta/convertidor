@@ -4,7 +4,6 @@ bin/convertidor: obj/convertidor.o
 obj/convertidor.o: src/main.c
 	gcc -Wall -c src/main.c -o obj/convertidor.o
 
-
 .PHONY: clean, run
 clean:
 	rm bin/* obj/*
