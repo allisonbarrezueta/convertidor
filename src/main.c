@@ -30,7 +30,7 @@ int main() {
 }
 
 void convertidor(int numero, int base) {
-  char arrnumconvertido[32]; //Arreglo de 32 bits
+  char arrnumconvertido[16]; //Arreglo de 32 bits
   char arrHexadecimal[16] = "0123456789ABCDEF"; //Se usará cada caracter dependiendo de la base escogida
   int contador = 0; //contador para ingresar numeros en arrnumconvertido
 
